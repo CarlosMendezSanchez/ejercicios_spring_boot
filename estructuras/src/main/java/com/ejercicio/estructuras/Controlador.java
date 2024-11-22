@@ -17,4 +17,17 @@ public class Controlador {
 		
 		return "<h1>" + ret + "</h1>";
 	}
+	
+	@PostMapping("/tablaMultiplicar")
+	public String ejercicio2(@RequestParam int numero) {
+		String tabla = "";
+		int resultado = 0;
+		
+		for (int i = 0; i <= 10 ; i++) {
+			resultado = numero * i;
+			tabla += "<tr><td>" + numero + " x " + i + " = " + resultado + "</td></tr>";
+		}
+		
+		return "<table border=1>" + tabla + "</table>";
+	}
 }
