@@ -30,4 +30,20 @@ public class Controlador {
 		
 		return "<table border=1>" + tabla + "</table>";
 	}
+	
+	@PostMapping("/promedioCalificaciones")
+	public String ejercicio3(@RequestParam String calificaciones) {
+		String tabla[] = calificaciones.split(",");
+		int tabla2[] = new int[tabla.length]; 
+		int promedio = 0;
+		
+		for (int i = 0; i < tabla.length; i++) {
+			tabla2[i] = Integer.parseInt(tabla[i]);
+			promedio += tabla2[i];
+		}
+		promedio = promedio / tabla2.length;
+		
+		return "<h1>" + "El promedio es: " + promedio + "</h1>";
+	}
+		
 }
